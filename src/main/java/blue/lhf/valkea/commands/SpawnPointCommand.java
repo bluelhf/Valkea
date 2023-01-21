@@ -12,12 +12,12 @@ import static java.util.Collections.emptyList;
 import static net.kyori.adventure.text.Component.*;
 import static net.kyori.adventure.text.format.NamedTextColor.*;
 
-public class SpawnCommand extends BukkitCommand {
-    private final Spawn spawn;
+public class SpawnPointCommand extends BukkitCommand {
+    private final SpawnPoint spawnPoint;
 
-    public SpawnCommand(@NotNull String name, final Spawn spawn) {
-        super(name, "Teleports the player to " + spawn.getPlainTextName() + ".", "/" + name, emptyList());
-        this.spawn = spawn;
+    public SpawnPointCommand(@NotNull String name, final SpawnPoint spawnPoint) {
+        super(name, "Teleports the player to " + spawnPoint.getPlainTextName() + ".", "/" + name, emptyList());
+        this.spawnPoint = spawnPoint;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class SpawnCommand extends BukkitCommand {
         }
 
         try {
-            final Location location = spawn.location().resolve();
+            final Location location = spawnPoint.location().resolve();
             entity.teleportAsync(location, TeleportCause.PLUGIN).handle((success, exc) -> {
                 if (success == null || !success || exc != null) {
                     reportException(sender, exc != null ? exc : new Exception("An unknown error occurred while teleporting."));
@@ -38,7 +38,7 @@ public class SpawnCommand extends BukkitCommand {
 
                 entity.sendActionBar(empty().color(GREEN)
                     .append(text("You were teleported to "))
-                    .append(spawn.getComponentName())
+                    .append(spawnPoint.getComponentName())
                     .append(text("!"))
                 );
 
@@ -52,6 +52,6 @@ public class SpawnCommand extends BukkitCommand {
     }
 
     protected void reportException(final CommandSender sender, final Throwable failure) {
-        sender.sendMessage(empty().color(RED).append(text("Failed to teleport you to ")).append(spawn.getComponentName()).append(text(": " + failure.getLocalizedMessage())));
+        sender.sendMessage(empty().color(RED).append(text("Failed to teleport you to ")).append(spawnPoint.getComponentName()).append(text(": " + failure.getLocalizedMessage())));
     }
 }

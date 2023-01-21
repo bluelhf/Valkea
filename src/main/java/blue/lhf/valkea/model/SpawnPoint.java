@@ -7,9 +7,9 @@ import org.bukkit.configuration.*;
 import static net.kyori.adventure.text.minimessage.MiniMessage.miniMessage;
 import static net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer.plainText;
 
-public record Spawn(String id, String displayName, UnresolvedLocation location) {
-    public static Spawn fromSection(final ConfigurationSection section) {
-        return new Spawn(
+public record SpawnPoint(String id, String displayName, UnresolvedLocation location) {
+    public static SpawnPoint parseSpawnPoint(final ConfigurationSection section) {
+        return new SpawnPoint(
             section.getName(),
             section.getString("display_name", section.getName()),
             new UnresolvedLocation(
