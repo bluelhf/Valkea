@@ -2,7 +2,6 @@ package blue.lhf.valkea.commands;
 
 import org.bukkit.*;
 import org.bukkit.command.*;
-import org.bukkit.entity.*;
 import org.bukkit.plugin.*;
 
 import java.lang.reflect.*;
@@ -17,15 +16,21 @@ public class CommandManager {
         this.host = host;
     }
 
-    public void registerCommands(final Set<Command> toAdd) {
-        toAdd.forEach(this::registerCommand);
+    public boolean registerCommands(final Set<Command> toAdd) {
+        boolean success = true;
+        for (final Command command : toAdd) {
+            success &= registerCommand(command);
+        }
+
         synchroniseCommands();
+        return success;
     }
 
-    private void registerCommand(final Command toAdd) {
+    private boolean registerCommand(final Command toAdd) {
         final CommandMap commandMap = Bukkit.getCommandMap();
-        commandMap.register(host.getName().toLowerCase(), toAdd);
-        this.commands.add(toAdd);
+        if (commandMap.register(host.getName().toLowerCase(), toAdd)) {
+            return this.commands.add(toAdd);
+        } else return false;
     }
 
     public void unregisterCommands() {

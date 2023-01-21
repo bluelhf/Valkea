@@ -37,7 +37,10 @@ public final class Valkea extends JavaPlugin {
             final Set<Command> commands = buildCommands(parseConfig());
             Bukkit.getScheduler().runTask(Valkea.this, () -> {
                 manager.unregisterCommands();
-                manager.registerCommands(commands);
+                if (!manager.registerCommands(commands)) {
+                    getLogger().warning("One or more commands had the same names as existing commands.");
+                    getLogger().warning("To use them, add '" + Valkea.this.getName().toLowerCase() + ":' to the start of the command.");
+                }
                 future.complete(null);
             });
 
