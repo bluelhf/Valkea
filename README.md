@@ -29,4 +29,4 @@ points included with Valkea, and adding our own one for the End.
      pitch: -90
    ```
 3. Save the file.
-4. Run the `/spawn` command to go to the spawn point.
+4. Run the `/spawn` command to go to the spawn point. No reloads necessary!
