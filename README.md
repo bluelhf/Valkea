@@ -18,10 +18,9 @@ is done via the configuration file, which is in YAML format (`.yml`).
 Valkea isn't published anywhere, because SpigotMC doesn't accept Paper-only
 plugins and Hangar is still in the closed alpha development stage at the
 time of writing[^1]. Nightly artifacts are uploaded to GitHub Actions, and retained for ninety days.
-1. Download the ZIP from [GitHub Actions](https://nightly.link/bluelhf/Valkea/workflows/maven/main/Valkea%20JAR.zip) or [build Valkea yourself](#compiling).
-2. Extract it to get the Valkea plugin JAR.
-3. Place it in your server's <kbd>plugins</kbd> directory.
-4. Restart the server.
+1. Download and extract the ZIP from [GitHub Actions](https://nightly.link/bluelhf/Valkea/workflows/maven/main/Valkea%20JAR.zip) or [build Valkea yourself](#compiling).
+2. Place `Valkea.jar` in your server's <kbd>plugins</kbd> directory.
+3. Restart the server.
 
 ### Configuring Valkea
 As a little exercise, let's try removing one of the two default spawn
