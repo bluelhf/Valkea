@@ -18,7 +18,7 @@ public record UnresolvedLocation(String worldKey, double x, double y, double z, 
         if ((world = Bukkit.getWorld(key)) != null) return world;
 
         final UUID uuid = parseUUID(key);
-        if (uuid != null && ((world = Bukkit.getWorld(uuid))) != null) return world;
+        if (uuid != null && (world = Bukkit.getWorld(uuid)) != null) return world;
 
         final NamespacedKey location = NamespacedKey.fromString(key);
         if (location != null && (world = Bukkit.getWorld(location)) != null) return world;
