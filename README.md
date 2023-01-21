@@ -49,8 +49,9 @@ if you have IntelliJ IDEA installed, the simplest way to compile Valkea is to us
 
 1. <kbd>File</kbd> > <kbd>New</kbd> > <kbd>Project from Version Control...</kbd>
 2. Enter `https://github.com/bluelhf/Valkea` as the repository URL
-3. <kbd>Alt + Shift + F10</kbd> > <kbd>Build with Maven</kbd>
-4. Get the Valkea JAR from <kbd>target</kbd>
+3. <kbd>Clone</kbd>, and wait for IDEA to clone the repository.
+4. <kbd>Alt + Shift + F10</kbd> > <kbd>Build with Maven</kbd>
+5. Get the Valkea JAR from <kbd>target</kbd>
 
 ### Footnotes
 [^1]: Time of writing is 2023-01-21.
