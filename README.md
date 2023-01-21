@@ -3,6 +3,8 @@
 
 # Valkea
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bluelhf/Valkea/maven.yml?color=%23ffffff&logo=apachemaven&logoColor=%23ffffff) ![GitHub](https://img.shields.io/github/license/bluelhf/Valkea?color=%23ffffff&label=licence&logo=gnu)
+
 Valkea is a [Paper](https://papermc.io) server plugin that adds configurable
 spawn points, each with their own commands.
 
