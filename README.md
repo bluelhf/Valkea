@@ -2,7 +2,10 @@
 <img align="right" width=26% src="./assets/logo.webp" />
 
 # Valkea
-
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/bluelhf/Valkea/maven.yml?color=%23ffffff&logo=apachemaven&logoColor=%23ffffff) ![GitHub](https://img.shields.io/github/license/bluelhf/Valkea?color=%23ffffff&label=licence&logo=gnu)
+> Tukela on tuletta olla, vaiva suuri valkeatta,  
+> ikävä inehmisien, ikävä itsen Ukonki.  
+> — _The seventy-fifth poem, Kalevala_
 Valkea is a [Paper](https://papermc.io) server plugin that adds configurable
 spawn points, each with their own commands.
 
