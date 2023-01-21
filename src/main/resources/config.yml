@@ -1,0 +1,47 @@
+# This is the Valkea configuration file.
+# There's no need to reload it with a command: It'll be reloaded automatically when you save it.
+
+# The first line here defines what command will be used to go to the spawn point.
+# In this case, we'd go to the example spawn with /spawn.
+spawn:
+  disabled: true # Can be used to disable any spawn points temporarily.
+
+  # This is the display name. It's in a language called 'MiniMessage'.
+  # Again, in this case, we're saying that the display name is "example spawn" in rainbow.
+  # To read more about MiniMessage, go to https://docs.adventure.kyori.net/minimessage/format.html.
+  display_name: '<rainbow>Example Lobby</rainbow>'
+
+  # This is the world for the spawn point. It should be either
+  #   - The name of a world, like "world", "world_the_end" or "Lobby"
+  #   - The UUID of a world, like "f526e158-0ad3-4159-8b9c-bf26ddf582c5".
+  #   - The minecraft ID of a world, like "minecraft:overworld" or "minecraft:the_nether".
+  # If the world can't be found, teleporting to the spawn point will fail.
+  world: 'world'
+
+  # These are the coordinates, exactly as they appear when you open the Debug Screen (with F3 or Fn + F3).
+  x: 0.0
+  y: 69.0
+  z: 0.0
+
+# This is just the same as above, except for a Nether spawn point.
+nether:
+  disabled: true
+
+  display_name: '<red><bold>Nether Lobby</bold></red>'
+  world: 'world_nether'
+  x: 0.0
+  y: 69.0
+  z: 0.0
+
+  # Along with coordinates, you can also define where players should be looking when they teleport to the spawn point.
+  # Yaw and pitch also appear in the F3 Debug Screen, but the yaw there is different because of a quirk in the server.
+  #
+  # Here's a description of the yaw value from https://jd.papermc.io/paper/1.19/org/bukkit/Location.html#getYaw():
+  #   - A yaw of 0 or 360 represents the positive z direction.
+  #   - A yaw of      180 represents the negative z direction.
+  #   - A yaw of       90 represents the negative x direction.
+  #   - A yaw of      270 represents the positive x direction.
+  #
+  # Pitch is the same as in the F3 Debug Screen.
+  yaw: 45.0
+  pitch: -20.0

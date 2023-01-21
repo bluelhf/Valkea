@@ -1,0 +1,7 @@
+name: Valkea
+version: '${project.version}'
+main: blue.lhf.valkea.Valkea
+api-version: 1.19
+load: POSTWORLD
+authors: [ bluelhf ]
+description: A spawn plugin with support for several spawns, each with independent commands.
